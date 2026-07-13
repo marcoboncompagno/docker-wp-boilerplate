@@ -1,3 +1,15 @@
+## Attenzione: lavorare con più siti locali
+
+- Un sito = una cartella progetto separata.
+- Ogni compose deve avere un `name` diverso.
+- Ogni sito deve usare una porta diversa: `8080`, `8081`, `8082`.
+- Ogni sito deve avere il suo `wp-content`.
+- Meglio `./wp-content` invece di `../wp-content`.
+- Non usare mai `docker compose down -v` se vuoi salvare il DB.
+- Non cancellare volumi da Docker Desktop a caso.
+- Non dare ai volumi un `name:` fisso condiviso.
+
+
 # Docker WordPress: backup e restore database
 
 Comandi rapidi per esportare e reimportare il database del progetto Docker WordPress.
@@ -87,3 +99,10 @@ Database name: wordpress
 Database user: wordpress
 Database password: wordpress
 ```
+
+
+Prima di importare un database, fare sempre un backup del database attuale.
+Il restore sovrascrive i dati esistenti nel database di destinazione.
+
+
+
