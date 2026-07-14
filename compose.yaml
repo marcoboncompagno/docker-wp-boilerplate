@@ -15,7 +15,7 @@ services:
   wordpress:
     image: wordpress:latest
     ports:
-      - "8080:80"
+      - "8081:80"
     restart: always
     depends_on:
       - db
@@ -24,6 +24,8 @@ services:
       WORDPRESS_DB_USER: wordpress_performa
       WORDPRESS_DB_PASSWORD: wordpress_performa
       WORDPRESS_DB_NAME: wordpress_performa
+      WORDPRESS_CONFIG_EXTRA: |
+        define( 'WP_ENVIRONMENT_TYPE', 'development' );
     volumes:
       - ../wp-content:/var/www/html/wp-content
 
